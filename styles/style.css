@@ -1,0 +1,164 @@
+/* || General style rules */
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+/* This as the class implies hide the lement visually */
+.hide-visually {
+    font-size: 0;
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute!important;
+    border: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+    clip: rect(1px,1px,1px,1px);
+}
+
+/* || Typography */
+
+body {
+    letter-spacing: 0.2px;
+    font-size: 10px;
+    line-height: 1.5;
+    word-spacing: 0.8px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+h2, 
+.profile-stat div:first-child {
+    color: hsl(229, 23%, 23%);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+h2 + div {
+    font-size: 0.94rem;
+    font-weight: 400;
+}
+
+h2 > span, 
+h2 + div {
+    color: hsl(227, 10%, 46%);
+}
+
+.profile-stat div:last-child {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 59%);
+    font-weight: 400;
+}
+
+
+/* Remove at the end of project */
+#span {
+    color: hsl(185, 75%, 39%); /* Dark cyan */
+    color: hsl(229, 23%, 23%); /* Very dark desaturated blue */
+    color: hsl(227, 10%, 46%); /* Dark grayish blue */
+    color: hsl(0, 0%, 59%); /* Dark gray */
+}
+
+/* || Layout */
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Trying to position as exactly as the design suggested and 
+    for both desktop and mobile vewport */
+    background: url(../images/bg-pattern-top.svg) right calc(50vw + 2.5em) bottom calc(50vh - 100px ) no-repeat, 
+    url(../images/bg-pattern-bottom.svg) left calc(50vw + 5px) top calc(50vh - 2.5em) no-repeat, 
+    hsl(185, 75%, 39%); 
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    flex: 0;
+}
+
+/* || Section Profile card */
+
+.profile-card {
+    background: url(../images/bg-pattern-card.svg) no-repeat left top / 100% 35%, white;
+    width: 33em;
+    padding-top: 8.5em;
+    border-radius: 15px;
+    box-shadow: 5px 10px 24px rgb(0 0 0 / 20%);
+}
+
+.profile-card img {
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto 2em;
+    border: 4.5px solid white;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.profile-card h2 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.profile-card h2 + div {
+    text-align: center;
+    line-height: initial;
+}
+
+.profile-card hr {
+    display: block;
+    margin: 2.5em 0 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid hsla(0, 0%, 59%, 20%);
+}
+
+.profile-card ul {
+    padding: 2.5em;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-card ul div {
+    text-align: center;
+}
+
+/* || Footer */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  
+/* || Media query for ipads/tablets breakpoint */
+
+@media screen and (min-width: 30.0625em) {
+
+    /* || Section Profile card */
+    
+    .profile-card {
+        width: 35em;
+    }
+    
+}
